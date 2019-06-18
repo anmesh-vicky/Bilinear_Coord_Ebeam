@@ -1,2 +1,7 @@
 # Bilinear_Coord_Ebeam
-Bilinear CNN for Bravais Lattice Prediction 
+Repo contains three models
+Coordinate coonvolution 
+Bilinear with Coordinate Convolution without transfer Learing
+Bilinear with Coordinate Convolution with Trannsfer Learning 
+
+

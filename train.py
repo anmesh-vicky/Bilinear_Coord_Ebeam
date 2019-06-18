@@ -5,7 +5,7 @@
 
 import argparse
 from keras.utils import plot_model 
-from Resnext import base_model
+from Cordconv import CordConv as base_model
 from dataLoader import data_loader
 import time
 from tqdm import tqdm
@@ -41,7 +41,7 @@ CNN = model.build_model()
 #filepath = "weights-imp-{epoch:02d}-{val_acc:.2f}.hdf5"
 filepath="weights_ve_res-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
 # Load the data
-CNN.load_weights("weights_ve_res-improvement-32-0.83.hdf5")
+# CNN.load_weights("weights_ve_res-improvement-32-0.83.hdf5")
 
 dataLoader = data_loader(args.train_data_dir, args.val_data_dir, args.test_data_dir, data_size = 200)
 train_generator, validation_generator, test_generator = dataLoader.load_images()
@@ -54,7 +54,7 @@ callbacks_list = [checkpoint_2,checkpoint_1]
 #X_train, Y_train, X_test, Y_test, val_data = dataLoader.load_images()
 #print('Training data size', len(X_train))
 start = time.time()
-#CNN.fit_generator(train_generator, steps_per_epoch =100, epochs = 100,callbacks=callbacks_list,validation_data  = validation_generator,validation_steps = 2 )
+CNN.fit_generator(train_generator, steps_per_epoch =100, epochs = 100,callbacks=callbacks_list,validation_data  = validation_generator,validation_steps = 2 )
 print('--------Test data--------')
 
 x = CNN.evaluate_generator(test_generator, steps = 10, verbose = 1)

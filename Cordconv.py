@@ -29,7 +29,7 @@ class CordConv:
 		x = Dense(128,activation='relu')(x)
 		x = Dense(128,activation='relu')(x)
 		x = Dropout(self.dropout)(x, training=True)
-		x = Dense(5)(x)
+		x = Dense(6)(x)
 		x = Softmax(axis=-1)(x)
 		model = Model(ip, x)
 		optimizer = Adam(lr=0.0001)
