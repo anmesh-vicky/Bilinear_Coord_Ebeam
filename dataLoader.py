@@ -11,7 +11,7 @@ import psutil
 # A class for loading data
 class data_loader():
 
-    def __init__(self, train_directory, val_directory, test_directory, data_size):
+    def __init__(self, train_directory, val_directory, test_directory):
         self.train_directory = train_directory
         self.val_directory = val_directory
         self.test_directory = test_directory    
@@ -26,7 +26,7 @@ class data_loader():
                                 class_mode="categorical",
                                 batch_size=128,
                                 shuffle =True,
-                                seed=42, classes=['centred', 'hexagonal', 'noise', 'oblique','rectangular','square'])
+                                seed=42, classes=['Centred', 'Hexagonal', 'Noise', 'Oblique','Rectangular','Square'])
         
         val_datagen = ImageDataGenerator()
         val_generator = val_datagen.flow_from_directory(self.val_directory,
@@ -34,7 +34,7 @@ class data_loader():
                                 color_mode="grayscale",
                                 class_mode='categorical',
                                 shuffle =True,seed=42,
-                                batch_size=128,classes=['centred', 'hexagonal', 'noise', 'oblique','rectangular','square'])
+                                batch_size=128,classes=['Centred', 'Hexagonal', 'Noise', 'Oblique','Rectangular','Square'])
         
         
         test_datagen = ImageDataGenerator()
@@ -42,7 +42,7 @@ class data_loader():
                                 target_size=(128, 128),
                                 color_mode="grayscale",
                                 class_mode="categorical",
-                                batch_size=128,classes=['centred', 'hexagonal', 'noise', 'oblique','rectangular','square'])
+                                batch_size=128,classes=['Centred', 'Hexagonal', 'Noise', 'Oblique','Rectangular','Square'])
         
         
 
