@@ -13,7 +13,7 @@ class CordConv:
 		self.kernel_size = kernel_size
 
 	def build_model(self):
-		ip = Input(shape=(128,128,3))
+		ip = Input(shape=(128,128,1))
 		x = CoordinateChannel2D()(ip)
 		x = Conv2D(32,self.kernel_size,padding='valid',activation="relu")(ip)
 		x = Conv2D(32,self.kernel_size,padding='valid',activation="relu")(x)
