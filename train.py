@@ -43,7 +43,7 @@ filepath="weights_ve_res-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
 # Load the data
 # CNN.load_weights("weights_ve_res-improvement-32-0.83.hdf5")
 
-dataLoader = data_loader(args.train_data_dir, args.val_data_dir, args.test_data_dir, data_size = 200)
+dataLoader = data_loader(args.train_data_dir, args.val_data_dir, args.test_data_dir)
 train_generator, validation_generator, test_generator = dataLoader.load_images()
 checkpoint_1 = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 checkpoint_2 =  TensorBoard(log_dir='logs/{}', histogram_freq=0, write_graph=True, write_images=True)
