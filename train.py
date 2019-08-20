@@ -15,9 +15,9 @@ parser = argparse.ArgumentParser()
 # Hyperparameters
 parser.add_argument('--e', help="The number of epochs", type = int, default = 10)
 parser.add_argument('--b', help="Batch size", type = int, default = 128)
-parser.add_argument('--train', help = "The portion of data for training", type= float, default = 0.6)
-parser.add_argument('--val', help = "The portion of data for validation", type = float, default = 0.2)
-parser.add_argument('--test', help = "The portion of data for testing", type = float, default = 0.2)
+parser.add_argument('--train', help = "The portion of data for training", type= float, default = 0.7)
+parser.add_argument('--val', help = "The portion of data for validation", type = float, default = 0.15)
+parser.add_argument('--test', help = "The portion of data for testing", type = float, default = 0.15)
 parser.add_argument('--dropout', help = "Whether to include dropout", type = float, default = .2)
 parser.add_argument('--kernel', help = "Kernel size", type = int, default = 5)
 
